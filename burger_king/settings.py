@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # my apps
     'menu',
     'account',
+    'order',
 ]
 
 MIDDLEWARE = [

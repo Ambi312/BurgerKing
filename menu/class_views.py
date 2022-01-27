@@ -2,7 +2,7 @@ from django.shortcuts import redirect
 from django.urls import reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .permissions import IsAdminCheckMixin
-
+from cart.cart import Cart
 from .forms import CreateProductForm, UpdateProductForm
 from .models import *
 
@@ -45,6 +45,7 @@ class ProductListView(ListView):
     paginate_by = 3
 
     def get_queryset(self):
+        cart = Cart(self.request)
         queryset = super().get_queryset()
         slug = self.kwargs.get('slug')
         filter_word = self.request.GET.get('filter')
