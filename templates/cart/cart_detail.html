@@ -3,7 +3,7 @@
 {% load cart_tag %}
 {% block content %}
 <div class="row">
-    {% for id, product in request.session.cart.items %}
+<!--    {% for id, product in request.session.cart.items %}-->
         <div class="card" style="width: 18rem;">
           <img src="{{ product.image }}" class="card-img-top" alt="...">
           <div class="card-body">
@@ -23,7 +23,7 @@
               {% endif %}
           </div>
         </div>
-    {% endfor %}
+<!--    {% endfor %}-->
 </div>
 <a href="{% url 'cart_clear' %}">
     <img style="width: 80px; height: auto;" src="{% static 'bin.png' %}">
